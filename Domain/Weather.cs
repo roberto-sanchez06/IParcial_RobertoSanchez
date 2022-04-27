@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Domain.Ciudad;
 
-namespace Domain.interfaces
+namespace Domain
 {
-    interface ApiConectionRepos
+    public class Weather
     {
-         City GetWeather(string ciudad);
+
     }
 }

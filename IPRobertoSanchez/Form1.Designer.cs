@@ -35,19 +35,21 @@ namespace IPRobertoSanchez
             // 
             // txtCiudad
             // 
-            this.txtCiudad.Location = new System.Drawing.Point(66, 32);
+            this.txtCiudad.Location = new System.Drawing.Point(21, 15);
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Size = new System.Drawing.Size(283, 20);
             this.txtCiudad.TabIndex = 0;
+            this.txtCiudad.TextChanged += new System.EventHandler(this.txtCiudad_TextChanged);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(424, 32);
+            this.btnAceptar.Location = new System.Drawing.Point(403, 13);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(107, 23);
             this.btnAceptar.TabIndex = 1;
             this.btnAceptar.Text = "Buscar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // Form1
             // 

@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppCore
+namespace AppCore.Interfaces
 {
-    public class Class1
+    public interface IService<T>
     {
+        void Add(T t);
+        List<T> GetAll();
     }
 }
