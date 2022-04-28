@@ -31,13 +31,14 @@ namespace IPRobertoSanchez
         {
             this.txtCiudad = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // txtCiudad
             // 
             this.txtCiudad.Location = new System.Drawing.Point(21, 15);
             this.txtCiudad.Name = "txtCiudad";
-            this.txtCiudad.Size = new System.Drawing.Size(283, 20);
+            this.txtCiudad.Size = new System.Drawing.Size(344, 20);
             this.txtCiudad.TabIndex = 0;
             this.txtCiudad.TextChanged += new System.EventHandler(this.txtCiudad_TextChanged);
             // 
@@ -51,11 +52,21 @@ namespace IPRobertoSanchez
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 55);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 395);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtCiudad);
             this.Name = "Form1";
@@ -70,6 +81,7 @@ namespace IPRobertoSanchez
 
         private System.Windows.Forms.TextBox txtCiudad;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 

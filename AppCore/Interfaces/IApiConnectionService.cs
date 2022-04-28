@@ -9,6 +9,7 @@ namespace AppCore.Interfaces
 {
     public interface IApiConnectionService
     {
-        WeatherForecast GetWeather(string ciudad, long unixtime);
+        WeatherHistory GetWeather(string ciudad, long unixtime);
+        string GetImage(Weather w);
     }
 }

@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.interfaces
 {
-    public interface IWeatherRepository : IRepository<Weather>
+    public interface IWeatherHistoryRepository : IRepository<WeatherHistory>
     {
-        List<Weather> GetWeatherByCity(string city);
     }
 }

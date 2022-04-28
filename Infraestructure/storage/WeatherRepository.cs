@@ -1,18 +1,17 @@
-﻿using Domain;
+﻿using Domain.Entities;
 using Domain.interfaces;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Infraestructure.storage
 {
-    class WeatherRepository : IWeatherRepository
+    public class WeatherRepository : IWeatherRepository
     {
         private RAFContext Context;
-        private const int SIZE = 300;
+        private const int SIZE = 120;
         public WeatherRepository()
         {
             Context = new RAFContext("weather", SIZE);
@@ -23,7 +22,7 @@ namespace Infraestructure.storage
             {
                 Context.Create<Weather>(t);
             }
-            catch (IOException)
+            catch (Exception)
             {
                 throw;
             }
@@ -35,10 +34,15 @@ namespace Infraestructure.storage
             {
                 return Context.GetAll<Weather>();
             }
-            catch (IOException)
+            catch (Exception)
             {
                 throw;
             }
+        }
+
+        public List<Weather> GetWeatherByCity(string city)
+        {
+            throw new NotImplementedException();
         }
     }
 }

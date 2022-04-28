@@ -18,7 +18,12 @@ namespace AppCore.Services
             this.connection = connection;
         }
 
-        public WeatherForecast GetWeather(string ciudad, long unixtime)
+        public string GetImage(Weather w)
+        {
+            return connection.GetImage(w);
+        }
+
+        public WeatherHistory GetWeather(string ciudad, long unixtime)
         {
             return connection.GetWeather(ciudad, unixtime);
         }

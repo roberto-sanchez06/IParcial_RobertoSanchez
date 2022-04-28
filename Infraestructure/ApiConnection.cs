@@ -14,17 +14,16 @@ namespace Infraestructure
 {
     public class ApiConnection : IApiConnection
     {
-        //private double lon;
-        //private double lat;
-        public WeatherForecast GetWeather(string ciudad, long unixtime)
+        public WeatherHistory GetWeather(string ciudad, long unixtime)
         {
             List<City> city = GetCoord(ciudad);
             using (WebClient web = new WebClient())
             {
-                //string url = $"{AppSettings.ApiUrl}{city.Lat}&lon={city.Lon}&dt={unixtime}&appid={AppSettings.Token}";
-                string url = $"{AppSettings.ApiUrl}{city.First().Lat}&lon={city.First().Lon}&dt={unixtime}&appid={AppSettings.Token}&units={AppSettings.Unit}";
+                //string url = $"{AppSettings.ApiUrl}{city.First().Lat}&lon={city.First().Lon}&dt={unixtime}&appid={AppSettings.Token}";
+                string url = $"{AppSettings.ApiUrl}{city.First().Lat}&lon={city.First().Lon}&dt={unixtime}&appid={AppSettings.Token}&units={AppSettings.Unit}&lang=es";
+                //string url = $"http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=60.99&lon=30.9&dt={unixtime}&appid=0f995113ea7931bbc41724930f2ae37e";
                 var json = web.DownloadString(url);
-                WeatherForecast w =JsonConvert.DeserializeObject<WeatherForecast>(json);
+                WeatherHistory w =JsonConvert.DeserializeObject<WeatherHistory>(json);
                 return w;
             }
         }
@@ -36,6 +35,11 @@ namespace Infraestructure
                 var json = web.DownloadString(url);
                 return JsonConvert.DeserializeObject<List<City>>(json);
             }
+        }
+        public string GetImage(Weather w)
+        {
+            string imageLocation = $"{AppSettings.ImageLocation}{w.Icon}.png";
+            return imageLocation;
         }
     }
 }

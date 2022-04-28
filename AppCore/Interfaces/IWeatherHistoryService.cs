@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.interfaces
+namespace AppCore.Interfaces
 {
-    public interface IWeatherRepository : IRepository<Weather>
+    public interface IWeatherHistoryService : IService<Weather>
     {
-        List<Weather> GetWeatherByCity(string city);
+
     }
 }

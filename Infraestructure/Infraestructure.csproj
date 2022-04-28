@@ -72,9 +72,9 @@
     <Compile Include="ApiConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="storage\BinaryReaderExtension.cs" />
-    <Compile Include="storage\CityRepository.cs" />
-    <Compile Include="storage\RAFContext.cs" />
     <Compile Include="storage\WeatherRepository.cs" />
+    <Compile Include="storage\RAFContext.cs" />
+    <Compile Include="storage\WeatherHistoryRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
