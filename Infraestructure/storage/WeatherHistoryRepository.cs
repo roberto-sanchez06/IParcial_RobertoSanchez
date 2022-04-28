@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Infraestructure.storage
 {
-    class WeatherHistoryRepository : IWeatherHistoryRepository
+    public class WeatherHistoryRepository : IWeatherHistoryRepository
     {
         private RAFContext Context;
         private const int SIZE = 300;

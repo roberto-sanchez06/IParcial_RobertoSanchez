@@ -42,7 +42,14 @@ namespace Infraestructure.storage
 
         public List<Weather> GetWeatherByCity(string city)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return Context.Find<Weather>(x=>x.TimeZone==city);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

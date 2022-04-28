@@ -32,6 +32,7 @@ namespace IPRobertoSanchez
             this.txtCiudad = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnVerTodo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtCiudad
@@ -61,11 +62,22 @@ namespace IPRobertoSanchez
             this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 395);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
+            // btnVerTodo
+            // 
+            this.btnVerTodo.Location = new System.Drawing.Point(559, 15);
+            this.btnVerTodo.Name = "btnVerTodo";
+            this.btnVerTodo.Size = new System.Drawing.Size(139, 23);
+            this.btnVerTodo.TabIndex = 3;
+            this.btnVerTodo.Text = "Ver todo";
+            this.btnVerTodo.UseVisualStyleBackColor = true;
+            this.btnVerTodo.Click += new System.EventHandler(this.btnVerTodo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVerTodo);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtCiudad);
@@ -82,6 +94,7 @@ namespace IPRobertoSanchez
         private System.Windows.Forms.TextBox txtCiudad;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnVerTodo;
     }
 }
 

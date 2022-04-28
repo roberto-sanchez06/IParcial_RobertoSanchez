@@ -58,7 +58,7 @@
             // 
             this.lblMain.AutoSize = true;
             this.lblMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMain.Location = new System.Drawing.Point(27, 182);
+            this.lblMain.Location = new System.Drawing.Point(116, 187);
             this.lblMain.Name = "lblMain";
             this.lblMain.Size = new System.Drawing.Size(43, 20);
             this.lblMain.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(27, 239);
+            this.lblDescription.Location = new System.Drawing.Point(95, 232);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(89, 20);
             this.lblDescription.TabIndex = 3;

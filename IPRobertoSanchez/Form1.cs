@@ -16,11 +16,13 @@ namespace IPRobertoSanchez
     {
         private IApiConnectionService apiConnection;
         private IWeatherService weatherService;
-        public Form1(IApiConnectionService apiConnection, IWeatherService weatherService)
+        private IWeatherHistoryService weatherHistoryService;
+        public Form1(IApiConnectionService apiConnection, IWeatherService weatherService, IWeatherHistoryService weatherHistoryService)
         {
             InitializeComponent();
             this.apiConnection = apiConnection;
             this.weatherService = weatherService;
+            this.weatherHistoryService = weatherHistoryService;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -38,7 +40,7 @@ namespace IPRobertoSanchez
                 }
                 for (int i = 0; i < 5; i++)
                 {
-                    DateTime dt = DateTime.Now.AddDays(-i);
+                    DateTime dt = DateTime.Now.AddDays(-i-1);
                     long unix = ((DateTimeOffset)dt).ToUnixTimeSeconds();
                     //MessageBox.Show(unix.ToString());
                     WeatherHistory weatherhistory = apiConnection.GetWeather(txtCiudad.Text, unix);
@@ -46,6 +48,8 @@ namespace IPRobertoSanchez
                     Weather w = weatherhistory.hourly.First().Weather[0];
                     w.TimeZone = weatherhistory.Timezone;
                     weatherService.Add(w);
+
+                    weatherHistoryService.Add(weatherhistory);
                     MessageBox.Show("Exito");
                     llenarFlp(w);
                 }
@@ -69,6 +73,16 @@ namespace IPRobertoSanchez
         private void txtCiudad_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVerTodo_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            List<Weather> weathers = weatherService.GetAll();
+            foreach (Weather weather in weathers)
+            {
+                llenarFlp(weather);
+            }
         }
     }
 }

@@ -30,9 +30,12 @@ namespace IPRobertoSanchez
             builder.RegisterType<WeatherRepository>().As<IWeatherRepository>();
             builder.RegisterType<WeatherService>().As<IWeatherService>();
 
+            builder.RegisterType<WeatherHistoryRepository>().As<IWeatherHistoryRepository>();
+            builder.RegisterType<WeatherHistoryService>().As<IWeatherHistoryService>();
+
             var container = builder.Build();
 
-            Application.Run(new Form1(container.Resolve<IApiConnectionService>(), container.Resolve<IWeatherService>()));
+            Application.Run(new Form1(container.Resolve<IApiConnectionService>(), container.Resolve<IWeatherService>(), container.Resolve<IWeatherHistoryService>()));
         }
     }
 }
