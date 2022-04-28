@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class WeatherHistory
+    public class WeatherConsult
     {
         public class Current
         {

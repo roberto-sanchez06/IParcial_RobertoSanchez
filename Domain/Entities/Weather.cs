@@ -13,5 +13,7 @@ namespace Domain.Entities
         public string Main { get; set; }
         public string Description { get; set; }
         public string Icon { get; set; }
+        public double Temp { get; set; }
+        public int Dt { get; set; }
     }
 }

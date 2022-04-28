@@ -14,16 +14,15 @@ namespace Infraestructure
 {
     public class ApiConnection : IApiConnection
     {
-        public WeatherHistory GetWeather(string ciudad, long unixtime)
+        public WeatherConsult GetWeather(string ciudad, long unixtime)
         {
             List<City> city = GetCoord(ciudad);
             using (WebClient web = new WebClient())
             {
                 //string url = $"{AppSettings.ApiUrl}{city.First().Lat}&lon={city.First().Lon}&dt={unixtime}&appid={AppSettings.Token}";
                 string url = $"{AppSettings.ApiUrl}{city.First().Lat}&lon={city.First().Lon}&dt={unixtime}&appid={AppSettings.Token}&units={AppSettings.Unit}&lang=es";
-                //string url = $"http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=60.99&lon=30.9&dt={unixtime}&appid=0f995113ea7931bbc41724930f2ae37e";
                 var json = web.DownloadString(url);
-                WeatherHistory w =JsonConvert.DeserializeObject<WeatherHistory>(json);
+                WeatherConsult w =JsonConvert.DeserializeObject<WeatherConsult>(json);
                 return w;
             }
         }

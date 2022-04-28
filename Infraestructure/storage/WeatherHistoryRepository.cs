@@ -18,11 +18,15 @@ namespace Infraestructure.storage
         {
             Context = new RAFContext("weatherHistory", SIZE);
         }
-        public void Add(WeatherHistory t)
+        public void Add(WeatherConsult t)
         {
             try
             {
-                Context.Create<WeatherHistory>(t);
+                //if (Context.Find<WeatherHistory>(x => x.Equals(t)).Count > 0)
+                //{
+                //    throw new Exception();
+                //}
+                Context.Create<WeatherConsult>(t);
             }
             catch (IOException)
             {
@@ -30,11 +34,11 @@ namespace Infraestructure.storage
             }
         }
 
-        public List<WeatherHistory> GetAll()
+        public List<WeatherConsult> GetAll()
         {
             try
             {
-                return Context.GetAll<WeatherHistory>();
+                return Context.GetAll<WeatherConsult>();
             }
             catch (IOException)
             {

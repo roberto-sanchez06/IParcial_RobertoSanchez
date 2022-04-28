@@ -38,19 +38,22 @@ namespace IPRobertoSanchez
                 {
                     throw new ArgumentException("No escribió el nombre de ninguna ciudad");
                 }
+
+                flowLayoutPanel1.Controls.Clear();
                 for (int i = 0; i < 5; i++)
                 {
-                    DateTime dt = DateTime.Now.AddDays(-i-1);
+                    DateTime dt = DateTime.Now.AddDays(-i);
                     long unix = ((DateTimeOffset)dt).ToUnixTimeSeconds();
                     //MessageBox.Show(unix.ToString());
-                    WeatherHistory weatherhistory = apiConnection.GetWeather(txtCiudad.Text, unix);
-                    //Weather w = weatherhistory.hourly[6].Weather[0];
-                    Weather w = weatherhistory.hourly.First().Weather[0];
+                    WeatherConsult weatherhistory = apiConnection.GetWeather(txtCiudad.Text, unix);
+                    //Weather w = weatherhistory.hourly.First().Weather[0];
+                    Weather w = weatherhistory.current.Weather[0];
+                    w.Temp = weatherhistory.current.Temp;
+                    w.Dt = weatherhistory.current.Dt;
                     w.TimeZone = weatherhistory.Timezone;
                     weatherService.Add(w);
 
                     weatherHistoryService.Add(weatherhistory);
-                    MessageBox.Show("Exito");
                     llenarFlp(w);
                 }
 
@@ -63,10 +66,7 @@ namespace IPRobertoSanchez
         }
         private void llenarFlp(Weather weather)
         {
-            WeatherDescription weatherDescription = new WeatherDescription();
-            weatherDescription.City = weather.TimeZone;
-            weatherDescription.Main = weather.Main;
-            weatherDescription.Description = weather.Description;
+            WeatherDescription weatherDescription = new WeatherDescription(weather);
             weatherDescription.ImageLocation = apiConnection.GetImage(weather);
             flowLayoutPanel1.Controls.Add(weatherDescription);
         }

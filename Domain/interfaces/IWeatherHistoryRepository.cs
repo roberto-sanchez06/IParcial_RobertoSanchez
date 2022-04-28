@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.interfaces
 {
-    public interface IWeatherHistoryRepository : IRepository<WeatherHistory>
+    public interface IWeatherHistoryRepository : IRepository<WeatherConsult>
     {
     }
 }

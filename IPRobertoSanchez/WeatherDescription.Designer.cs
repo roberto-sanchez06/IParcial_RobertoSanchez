@@ -32,6 +32,8 @@
             this.lblCity = new System.Windows.Forms.Label();
             this.lblMain = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
+            this.lblTemp = new System.Windows.Forms.Label();
+            this.lblDt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,10 +76,32 @@
             this.lblDescription.TabIndex = 3;
             this.lblDescription.Text = "Description";
             // 
+            // lblTemp
+            // 
+            this.lblTemp.AutoSize = true;
+            this.lblTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTemp.Location = new System.Drawing.Point(179, 68);
+            this.lblTemp.Name = "lblTemp";
+            this.lblTemp.Size = new System.Drawing.Size(49, 20);
+            this.lblTemp.TabIndex = 4;
+            this.lblTemp.Text = "Temp";
+            // 
+            // lblDt
+            // 
+            this.lblDt.AutoSize = true;
+            this.lblDt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDt.Location = new System.Drawing.Point(179, 126);
+            this.lblDt.Name = "lblDt";
+            this.lblDt.Size = new System.Drawing.Size(26, 20);
+            this.lblDt.TabIndex = 5;
+            this.lblDt.Text = "Dt";
+            // 
             // WeatherDescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblDt);
+            this.Controls.Add(this.lblTemp);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.lblMain);
             this.Controls.Add(this.lblCity);
@@ -97,5 +121,7 @@
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.Label lblMain;
         private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.Label lblTemp;
+        private System.Windows.Forms.Label lblDt;
     }
 }

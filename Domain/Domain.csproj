@@ -72,7 +72,7 @@
     <Compile Include="Ciudad.cs" />
     <Compile Include="Entities\City.cs" />
     <Compile Include="Entities\Weather.cs" />
-    <Compile Include="Entities\WeatherHistory.cs" />
+    <Compile Include="Entities\WeatherConsult.cs" />
     <Compile Include="interfaces\IApiConnection.cs" />
     <Compile Include="interfaces\IRepository.cs" />
     <Compile Include="interfaces\IWeatherHistoryRepository.cs" />

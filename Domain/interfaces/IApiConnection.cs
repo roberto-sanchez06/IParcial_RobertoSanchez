@@ -10,7 +10,7 @@ namespace Domain.interfaces
 {
     public interface IApiConnection
     {
-        WeatherHistory GetWeather(string ciudad, long unixtime);
+        WeatherConsult GetWeather(string ciudad, long unixtime);
         string GetImage(Weather w);
     }
 }

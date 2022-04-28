@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AppCore.Interfaces
 {
-    public interface IWeatherHistoryService : IService<WeatherHistory>
+    public interface IWeatherHistoryService : IService<WeatherConsult>
     {
 
     }

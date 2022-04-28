@@ -23,7 +23,7 @@ namespace AppCore.Services
             return connection.GetImage(w);
         }
 
-        public WeatherHistory GetWeather(string ciudad, long unixtime)
+        public WeatherConsult GetWeather(string ciudad, long unixtime)
         {
             return connection.GetWeather(ciudad, unixtime);
         }

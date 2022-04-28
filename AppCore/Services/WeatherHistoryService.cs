@@ -18,12 +18,12 @@ namespace AppCore.Services
             WeatherHistory = weatherHistory;
         }
 
-        public void Add(WeatherHistory t)
+        public void Add(WeatherConsult t)
         {
             WeatherHistory.Add(t);
         }
 
-        public List<WeatherHistory> GetAll()
+        public List<WeatherConsult> GetAll()
         {
             return WeatherHistory.GetAll();
         }
